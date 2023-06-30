@@ -3,16 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Shoe
-  - ShovableBlock
-  - Shovel
-  - BurnableBlock
-  - Torch
-  - Trap
-  - Water
-  - GrowableBlock
-  - Heal
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -20,8 +11,6 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
-  - Special
   - 
   - 
   - 
@@ -36,7 +25,9 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Layer 1
+  - Layer 2
+  - Layer 3
   - 
   - 
   - 
@@ -47,15 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 539597971
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Terrain
-    uniqueID: 249614703
+  - name: Layer 1
+    uniqueID: 2425651459
     locked: 0
-  - name: Special
-    uniqueID: 1634296063
+  - name: Layer 2
+    uniqueID: 4250941897
+    locked: 0
+  - name: Layer 3
+    uniqueID: 4189426099
     locked: 0
