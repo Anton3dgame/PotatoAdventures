@@ -32,7 +32,7 @@ public class ItemCollector : MonoBehaviour
         {
             Destroy(collision.gameObject);
             shovel = true;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);  // nur zum Test hier
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);  // nur zum Test hier
         }
 
         if (collision.gameObject.CompareTag("Torch"))
