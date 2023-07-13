@@ -14,6 +14,8 @@ public class PlayerInteraction : MonoBehaviour
     private GameObject interactingObject2;
     private GameObject interactingObject3;
     public GameObject objectToCreate;    // was gespawnt wird
+
+    public bool gravity = false;
    
    
     // Update is called once per frame
@@ -80,6 +82,21 @@ public class PlayerInteraction : MonoBehaviour
         {
             isOnGrassObject = false;
             interactingObject3 = null;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Gravity"))
+        {
+            if (!gravity)
+            {
+                gravity = true;
+            }
+            else
+            {
+                gravity = false;
+            }
         }
     }
 

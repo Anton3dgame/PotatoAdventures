@@ -13,6 +13,7 @@ TagManager:
   - Shovel
   - Water
   - Torch
+  - Gravity
   layers:
   - Default
   - TransparentFX
