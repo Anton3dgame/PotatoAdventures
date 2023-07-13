@@ -11,6 +11,7 @@ public class PlayerLife : MonoBehaviour
     private Rigidbody2D rb;
     private int lifes = 3;
     private bool damage = false;
+    private bool hitByBullet = false;
 
     private float damageTimer = 0.5f; // Zeitintervall für den Schaden
     private float currentTimer = 0.6f; // Aktueller Timer für den Schaden
@@ -65,6 +66,11 @@ public class PlayerLife : MonoBehaviour
         {
             currentTimer = 0.6f;
         }
+        if(hitByBullet)
+        {
+            hitByBullet = !hitByBullet;
+            damage = false;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -74,6 +80,7 @@ public class PlayerLife : MonoBehaviour
             damage = true;
            
         }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -92,6 +99,12 @@ public class PlayerLife : MonoBehaviour
             Destroy(collision.gameObject);
             Heal();
 
+        }
+        else if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(collision.gameObject);
+            hitByBullet = true;
+            damage = true;
         }
     }
 

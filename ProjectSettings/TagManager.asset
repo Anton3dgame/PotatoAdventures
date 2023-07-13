@@ -13,6 +13,7 @@ TagManager:
   - Shovel
   - Water
   - Torch
+  - Weak Point
   layers:
   - Default
   - TransparentFX
