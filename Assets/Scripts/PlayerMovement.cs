@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private LayerMask specialGround;
 
+    public bool isGrounded = false;
+    public LayerMask groundLayer;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -24,10 +27,22 @@ public class PlayerMovement : MonoBehaviour
         float dirX = Input.GetAxisRaw("Horizontal");
         rigidbody.velocity = new Vector2(dirX * 7f, rigidbody.velocity.y);
 
-        if (Input.GetButtonDown("Jump") && (IsGrounded() || IsSpecial()) && gameObject.GetComponent<ItemCollector>().shoe == false)
+        if (Input.GetButtonDown("Jump") && (IsGrounded() || IsSpecial()) && !gameObject.GetComponent<ItemCollector>().shoe)
         {
-            rigidbody.velocity = new Vector2(rigidbody.velocity.x, 9f);
+
+            if (gameObject.GetComponent<PlayerInteraction>().gravity)
+            {
+                rigidbody.velocity = new Vector2(rigidbody.velocity.x, -9f);
+                Debug.Log("true");
+            }
+            else
+            {
+                rigidbody.velocity = new Vector2(rigidbody.velocity.x, 9f);
+                Debug.Log("false");
+            }   
         }
+
+        Debug.Log((IsGrounded() || IsSpecial()));
 
 
         if (Input.GetButtonDown("Jump") && gameObject.GetComponent<ItemCollector>().shoe)

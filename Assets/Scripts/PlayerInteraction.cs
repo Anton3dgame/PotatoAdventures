@@ -18,6 +18,8 @@ public class PlayerInteraction : MonoBehaviour
 
     public bool codePanelactive = false;
 
+    public bool gravity = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -98,6 +100,18 @@ public class PlayerInteraction : MonoBehaviour
         if (collision.gameObject.CompareTag("Code"))
         {
             codePanelactive = false;
+        }
+
+        if (collision.gameObject.CompareTag("Gravity"))
+        {
+            if (!gravity)
+            {
+                gravity = true;
+            }
+            else
+            {
+                gravity = false;
+            }
         }
     }
 
