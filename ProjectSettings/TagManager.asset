@@ -13,7 +13,6 @@ TagManager:
   - Shovel
   - Water
   - Torch
-  - Bullet
   layers:
   - Default
   - TransparentFX
