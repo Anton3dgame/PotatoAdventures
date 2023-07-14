@@ -33,12 +33,10 @@ public class PlayerMovement : MonoBehaviour
             if (gameObject.GetComponent<PlayerInteraction>().gravity)
             {
                 rigidbody.velocity = new Vector2(rigidbody.velocity.x, -9f);
-                Debug.Log("true");
             }
             else
             {
                 rigidbody.velocity = new Vector2(rigidbody.velocity.x, 9f);
-                Debug.Log("false");
             }   
         }
 
@@ -49,8 +47,16 @@ public class PlayerMovement : MonoBehaviour
         {
             if (counter < 1)
             {
-                rigidbody.velocity = new Vector2(rigidbody.velocity.x, 9f);
-                counter++;
+                if (gameObject.GetComponent<PlayerInteraction>().gravity)
+                {
+                    rigidbody.velocity = new Vector2(rigidbody.velocity.x, -10f);
+                    counter++;
+                }
+                else
+                {
+                    rigidbody.velocity = new Vector2(rigidbody.velocity.x, 10f);
+                    counter++;
+                }
 
             }
         } else if (IsGrounded() || IsSpecial())
