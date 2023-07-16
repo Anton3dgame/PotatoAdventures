@@ -58,15 +58,17 @@ public class PlayerLife : MonoBehaviour
                     lifes--;
                 }
             }
-
+            
             currentTimer += Time.deltaTime;
+            Debug.Log(currentTimer);
         }
 
-        if (!damage)
+      /*  if (!damage)
         {
             currentTimer = 0.6f;
-        }
-        if(hitByBullet)
+        }*/
+
+        if (hitByBullet)
         {
             hitByBullet = !hitByBullet;
             damage = false;

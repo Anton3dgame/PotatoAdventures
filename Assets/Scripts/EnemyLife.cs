@@ -52,15 +52,11 @@ public class EnemyLife : MonoBehaviour
         {
             heart_2.enabled = false;
         }
+    }
 
-        if (gameObject.GetComponent<PlayerInteraction>().leben_show)
-        {
-            Leben.SetActive(true);
-        }
-        else
-        {
-           Leben.SetActive(false);
-        }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Leben.SetActive(true);
     }
 
     public void TakeDamage(int amount)

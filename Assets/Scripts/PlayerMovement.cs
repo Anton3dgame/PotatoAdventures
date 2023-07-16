@@ -32,11 +32,11 @@ public class PlayerMovement : MonoBehaviour
 
             if (gameObject.GetComponent<PlayerInteraction>().gravity)
             {
-                rigidbody.velocity = new Vector2(rigidbody.velocity.x, -9f);
+                rigidbody.velocity = new Vector2(rigidbody.velocity.x, -9.4f);
             }
             else
             {
-                rigidbody.velocity = new Vector2(rigidbody.velocity.x, 9f);
+                rigidbody.velocity = new Vector2(rigidbody.velocity.x, 9.4f);
             }
         }
 
