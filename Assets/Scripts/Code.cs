@@ -37,15 +37,6 @@ public class Code : MonoBehaviour
             }
         } 
 
-        if ((gameObject.GetComponent<PlayerInteraction>().codePanelactive))
-        {
-            codePanel.SetActive(true);
-        }
-        else
-        {
-            codePanel.SetActive(false);
-        }
-
         codeText.text = codeTextValue;
 
         if (codeTextValue == "1234")
