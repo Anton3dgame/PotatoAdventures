@@ -15,6 +15,9 @@ TagManager:
   - Torch
   - Code
   - Gravity
+  - Weak Point
+  - Bullet
+  - Life
   layers:
   - Default
   - TransparentFX

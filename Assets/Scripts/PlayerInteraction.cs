@@ -20,6 +20,8 @@ public class PlayerInteraction : MonoBehaviour
 
     public bool gravity = false;
 
+    public bool leben_show = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -92,7 +94,7 @@ public class PlayerInteraction : MonoBehaviour
         if (collision.gameObject.CompareTag("Code"))
         {
             codePanelactive = true;
-        }
+        }  
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -100,6 +102,11 @@ public class PlayerInteraction : MonoBehaviour
         if (collision.gameObject.CompareTag("Code"))
         {
             codePanelactive = false;
+        }
+
+        if (collision.gameObject.CompareTag("Life"))
+        {
+            leben_show = true;
         }
 
         if (collision.gameObject.CompareTag("Gravity"))

@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 rigidbody.velocity = new Vector2(rigidbody.velocity.x, 9f);
-            }   
+            }
         }
 
         if (Input.GetButtonDown("Jump") && gameObject.GetComponent<ItemCollector>().shoe)
