@@ -25,26 +25,17 @@ public class Code : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!finishedCode)
-        {
-            if ((gameObject.GetComponent<PlayerInteraction>().codePanelactive))
-            {
-                codePanel.SetActive(true);
-            }
-            else
-            {
-                codePanel.SetActive(false);
-            }
-        } 
-
-        if ((gameObject.GetComponent<PlayerInteraction>().codePanelactive))
-        {
-            codePanel.SetActive(true);
-        }
-        else
-        {
-            codePanel.SetActive(false);
-        }
+         if (!finishedCode)
+         {
+             if ((gameObject.GetComponent<PlayerInteraction>().codePanelactive))
+             {
+                 codePanel.SetActive(true);
+             }
+             else
+             {
+                 codePanel.SetActive(false);
+             }
+         } 
 
         codeText.text = codeTextValue;
 
@@ -81,12 +72,13 @@ public class Code : MonoBehaviour
         image.color = new Color(1f, 1f, 1f, 0.39f);
         codeTextValue = "";
     }
-
     private IEnumerator DelayedLoadScene2()
     {
         yield return new WaitForSeconds(1f);
         codePanel.SetActive(false);
         finishedCode = true;
     } 
+
+
 
 }
