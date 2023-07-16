@@ -18,6 +18,7 @@ TagManager:
   - Weak Point
   - Bullet
   - Life
+  - Platform
   layers:
   - Default
   - TransparentFX
