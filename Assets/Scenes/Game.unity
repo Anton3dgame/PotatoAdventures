@@ -1579,6 +1579,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6924312412224367910, guid: 11de061d5f9a1a64ca745dc643d01cfb,
         type: 3}
+      propertyPath: Leben
+      value: 
+      objectReference: {fileID: 771681425}
+    - target: {fileID: 6924312412224367910, guid: 11de061d5f9a1a64ca745dc643d01cfb,
+        type: 3}
       propertyPath: heart_1
       value: 
       objectReference: {fileID: 979950867}
@@ -4101,6 +4106,7 @@ MonoBehaviour:
   objectToCreate: {fileID: 0}
   codePanelactive: 0
   gravity: 0
+  leben_show: 0
 --- !u!1 &1026108227
 GameObject:
   m_ObjectHideFlags: 0
@@ -10509,37 +10515,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 255ef859f39314a4db35d6ac2ad02142, type: 3}
---- !u!1 &1246844603
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1246844604}
-  m_Layer: 0
-  m_Name: Hexe_lifes
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1246844604
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246844603}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.9468002, y: -0.13746044, z: -8.34911}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1249300903
 GameObject:
   m_ObjectHideFlags: 0
@@ -58248,6 +58223,7 @@ GameObject:
   - component: {fileID: 1508603374}
   - component: {fileID: 1508603375}
   - component: {fileID: 1508603376}
+  - component: {fileID: 1508603377}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -58425,6 +58401,7 @@ MonoBehaviour:
     type: 3}
   codePanelactive: 0
   gravity: 0
+  leben_show: 0
 --- !u!114 &1508603371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58508,6 +58485,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 1508603365}
   playerTransform: {fileID: 1508603367}
+--- !u!114 &1508603377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508603363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee46466fc361eb147a5be70583f9d0b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 0
+  heart_1: {fileID: 979950867}
+  heart_2: {fileID: 1324324030}
+  heart_3: {fileID: 122037939}
+  heart_4: {fileID: 1077606252}
+  heart_5: {fileID: 1026108229}
+  Leben: {fileID: 771681425}
 --- !u!4 &1530872979 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 143645259036625435, guid: 086f0b6fac0438947944af91c4147ee8,

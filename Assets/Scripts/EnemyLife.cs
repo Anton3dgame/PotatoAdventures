@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -19,11 +20,14 @@ public class EnemyLife : MonoBehaviour
     public Image heart_4;
     public Image heart_5;
 
+    public GameObject Leben;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
+        Leben.SetActive(false);
     }
 
     // Update is called once per frame
@@ -49,11 +53,14 @@ public class EnemyLife : MonoBehaviour
             heart_2.enabled = false;
         }
 
-        if (currentHealth == 0)
+        if (gameObject.GetComponent<PlayerInteraction>().leben_show)
         {
-            heart_1.enabled = false;
+            Leben.SetActive(true);
         }
-
+        else
+        {
+           Leben.SetActive(false);
+        }
     }
 
     public void TakeDamage(int amount)
@@ -61,6 +68,7 @@ public class EnemyLife : MonoBehaviour
         currentHealth -= amount;
         if (currentHealth<=0)
         {
+            heart_1.enabled = false;
             Destroy(gameObject);
         }
     }

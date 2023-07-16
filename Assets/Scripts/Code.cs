@@ -27,7 +27,7 @@ public class Code : MonoBehaviour
     {
          if (!finishedCode)
          {
-             if ((gameObject.GetComponent<PlayerInteraction>().codePanelactive))
+             if (gameObject.GetComponent<PlayerInteraction>().codePanelactive)
              {
                  codePanel.SetActive(true);
              }
