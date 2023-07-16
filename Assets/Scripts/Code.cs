@@ -12,7 +12,7 @@ public class Code : MonoBehaviour
     [SerializeField] Text codeText;
     public string codeTextValue = "";
     private bool rightCode = false;
-    private bool finishedCode = false;
+    //private bool finishedCode = false;
     public GameObject door;
     public Image image;
     int length = 4;
@@ -20,22 +20,30 @@ public class Code : MonoBehaviour
     void Start()
     {
         codePanel.SetActive(false);
-        //codeText.GetComponent<Image>().color = Color.green;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!finishedCode)
+        /* if (!finishedCode)
+         {
+             if ((gameObject.GetComponent<PlayerInteraction>().codePanelactive))
+             {
+                 codePanel.SetActive(true);
+             }
+             else
+             {
+                 codePanel.SetActive(false);
+             }
+         } */
+
+        if ((gameObject.GetComponent<PlayerInteraction>().codePanelactive))
         {
-            if ((gameObject.GetComponent<PlayerInteraction>().codePanelactive))
-            {
-                codePanel.SetActive(true);
-            }
-            else
-            {
-                codePanel.SetActive(false);
-            }
+            codePanel.SetActive(true);
+        }
+        else
+        {
+            codePanel.SetActive(false);
         }
 
         codeText.text = codeTextValue;
@@ -44,7 +52,7 @@ public class Code : MonoBehaviour
         {
             rightCode = true;
             image.color = new Color(0.13f, 0.85f, 0f, 0.39f);
-            StartCoroutine(DelayedLoadScene2());
+            //StartCoroutine(DelayedLoadScene2());
         }
 
         if (codeTextValue.Length == 4 && !rightCode)
@@ -74,11 +82,6 @@ public class Code : MonoBehaviour
         codeTextValue = "";
     }
 
-    private IEnumerator DelayedLoadScene2()
-    {
-        yield return new WaitForSeconds(1f);
-        codePanel.SetActive(false);
-        finishedCode = true;
-    }
+
 
 }
