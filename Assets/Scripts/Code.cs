@@ -20,7 +20,6 @@ public class Code : MonoBehaviour
     void Start()
     {
         codePanel.SetActive(false);
-        //codeText.GetComponent<Image>().color = Color.green;
     }
 
     // Update is called once per frame
@@ -36,6 +35,15 @@ public class Code : MonoBehaviour
             {
                 codePanel.SetActive(false);
             }
+        } 
+
+        if ((gameObject.GetComponent<PlayerInteraction>().codePanelactive))
+        {
+            codePanel.SetActive(true);
+        }
+        else
+        {
+            codePanel.SetActive(false);
         }
 
         codeText.text = codeTextValue;
@@ -51,12 +59,12 @@ public class Code : MonoBehaviour
         {
             image.color = new Color(0.67f, 0f, 0f, 0.39f);
             StartCoroutine(DelayedLoadScene());
-        }
+        } 
 
         if (rightCode)
         {
             Destroy(door);
-        }
+        } 
     }
 
     public void AddDigit(string digit)
@@ -79,6 +87,6 @@ public class Code : MonoBehaviour
         yield return new WaitForSeconds(1f);
         codePanel.SetActive(false);
         finishedCode = true;
-    }
+    } 
 
 }
