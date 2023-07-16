@@ -56,7 +56,10 @@ public class EnemyLife : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Leben.SetActive(true);
+        if (collision.gameObject.CompareTag("Life"))
+        {
+            Leben.SetActive(true);
+        }
     }
 
     public void TakeDamage(int amount)

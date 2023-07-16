@@ -117,7 +117,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void CreateOject()
     {
-        Vector3 spawnPosition = interactingObject3.transform.position + new Vector3(0f, 2f, 0f);
+        Vector3 spawnPosition = interactingObject3.transform.position + new Vector3(0f, 1f, 0f);
         Quaternion spawnRotation = Quaternion.identity;
 
         GameObject newObject = Instantiate(objectToCreate, spawnPosition, spawnRotation);
