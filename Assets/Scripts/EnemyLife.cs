@@ -10,9 +10,15 @@ public class EnemyLife : MonoBehaviour
     public int currentHealth;
     private bool damage = false;
 
-
     private float damageTimer = 0.5f; // Zeitintervall für den Schaden
     private float currentTimer = 0.6f; // Aktueller Timer für den Schaden
+
+    public Image heart_1;
+    public Image heart_2;
+    public Image heart_3;
+    public Image heart_4;
+    public Image heart_5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +29,30 @@ public class EnemyLife : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-   
+        if (currentHealth == 4)
+        {
+            heart_5.enabled = false;
+        }
+
+        if (currentHealth == 3)
+        {
+            heart_4.enabled = false;
+        }
+
+        if (currentHealth == 2)
+        {
+            heart_3.enabled = false;
+        }
+
+        if (currentHealth == 1)
+        {
+            heart_2.enabled = false;
+        }
+
+        if (currentHealth == 0)
+        {
+            heart_1.enabled = false;
+        }
 
     }
 
