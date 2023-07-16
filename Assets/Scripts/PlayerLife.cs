@@ -13,7 +13,7 @@ public class PlayerLife : MonoBehaviour
     private bool damage = false;
     private bool hitByBullet = false;
 
-    private float damageTimer = 0.5f; // Zeitintervall für den Schaden
+    private float damageTimer = 0.4f; // Zeitintervall für den Schaden
     private float currentTimer = 0.6f; // Aktueller Timer für den Schaden
 
     public Image heart_1;
@@ -60,7 +60,7 @@ public class PlayerLife : MonoBehaviour
             }
             
             currentTimer += Time.deltaTime;
-            Debug.Log(currentTimer);
+            //Debug.Log(currentTimer);
         }
 
       /*  if (!damage)
@@ -80,6 +80,7 @@ public class PlayerLife : MonoBehaviour
         if (collision.gameObject.CompareTag("Trap"))
         {
             damage = true;
+            Debug.Log("true");
            
         }
 
@@ -90,7 +91,7 @@ public class PlayerLife : MonoBehaviour
         if (collision.gameObject.CompareTag("Trap"))
         {
             damage = false;
-            
+            Debug.Log("flase");
         }
     }
 
