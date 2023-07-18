@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class EnemyLife : MonoBehaviour
 {
@@ -69,7 +70,14 @@ public class EnemyLife : MonoBehaviour
         {
             heart_1.enabled = false;
             Destroy(gameObject);
+            StartCoroutine(DelayedLoadScene2());
         }
     }
- 
+
+    private IEnumerator DelayedLoadScene2()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    }
+
 }
