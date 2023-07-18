@@ -36,6 +36,6 @@ public class GravityShift : MonoBehaviour
 
     private IEnumerator DelayedLoadScene()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(1f);
     }
 }
