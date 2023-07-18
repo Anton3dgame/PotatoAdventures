@@ -565,8 +565,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15, y: 18.8}
-  m_SizeDelta: {x: 519.936, y: 126.5046}
+  m_AnchoredPosition: {x: 1.4438, y: 14.2812}
+  m_SizeDelta: {x: 955.9935, y: 338.885}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &813167546
 MonoBehaviour:
@@ -603,7 +603,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "                                          Credits\nSpiel erstellt von:
     \nAnton Paschke, Minh Hoang Tan, Ronja Wladarz, Illia Lukashenko, Paul Lehmann,
-    Anthony Ro\xDFberger\n\nGenutze Assets: ..."
+    Anthony Ro\xDFberger\n\nAssets (ohne CC0 bzw. mit Erw\xE4hnung): \n\n<ahref=\"https://www.freepik.com/free-vector/set-seamless-borders-liana-branches-tropical-leaves-game-cartoon-elements-creeper-jungle_35475261.htm#query=2d%20game%20sprites%20vines&position=6&from_view=search&track=ais%22%3EImage
+    by valadzionak_volha</a> on Freepik\n\ndevassets.com/assets/rpg-tutorial-assets\n\n"
 --- !u!222 &813167547
 CanvasRenderer:
   m_ObjectHideFlags: 0
