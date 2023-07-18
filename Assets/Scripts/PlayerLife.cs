@@ -20,6 +20,8 @@ public class PlayerLife : MonoBehaviour
     public Image heart_2;
     public Image heart_3;
 
+    bool tot = false;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -51,7 +53,11 @@ public class PlayerLife : MonoBehaviour
                 currentTimer = 0f;
                 if (lifes == 1)
                 {
-                    Die();
+                    if (!tot)
+                    {
+                        tot = true;
+                        Die();
+                    }
                 }
                 if (lifes > 0)
                 {
@@ -106,8 +112,13 @@ public class PlayerLife : MonoBehaviour
         else if (collision.gameObject.CompareTag("Bullet"))
         {
             Destroy(collision.gameObject);
-            hitByBullet = true;
-            damage = true;
+            lifes--;
+
+            if (lifes < 1 && !tot)
+            {
+                tot = true;
+                Die();
+            }
         }
     }
 

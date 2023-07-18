@@ -7,7 +7,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     public float speed;
     public float lineOfSite;
     public float shootingRange;
-    private float fireRate = 0.5f;
+    public float fireRate = 0.5f;
     private float nextFireTime;
     public GameObject bullet;
     public GameObject bulletParent;
