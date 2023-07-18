@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Build;
 using UnityEngine;
 
@@ -33,16 +34,20 @@ public class PlayerMovement : MonoBehaviour
             if (gameObject.GetComponent<PlayerInteraction>().gravity)
             {
                 rigidbody.velocity = new Vector2(rigidbody.velocity.x, -8.7f);
+
             }
             else
             {
                 rigidbody.velocity = new Vector2(rigidbody.velocity.x, 8.7f);
             }
+
         }
 
         if (Input.GetButtonDown("Jump") && gameObject.GetComponent<ItemCollector>().shoe)
         {
-            if (counter < 1)
+            Debug.Log("Sprung in der Luft");
+            Debug.Log(counter);
+            if (counter < 2)
             {
                 if (gameObject.GetComponent<PlayerInteraction>().gravity)
                 {
@@ -51,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log("Flieeg");
                     rigidbody.velocity = new Vector2(rigidbody.velocity.x, 10f);
                     counter++;
                 }
