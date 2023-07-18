@@ -45,8 +45,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && gameObject.GetComponent<ItemCollector>().shoe)
         {
-            Debug.Log("Sprung in der Luft");
-            Debug.Log(counter);
             if (counter < 2)
             {
                 if (gameObject.GetComponent<PlayerInteraction>().gravity)
@@ -56,11 +54,9 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Flieeg");
                     rigidbody.velocity = new Vector2(rigidbody.velocity.x, 10f);
                     counter++;
                 }
-
             }
         } else if (IsGrounded() || IsSpecial())
         {

@@ -17,15 +17,25 @@ public class GravityShift : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+   
         if (gameObject.GetComponent<PlayerInteraction>().gravity)
         {
             playerRigidbody.gravityScale = -2f;
             playerTransform.localScale = new Vector3(1f, -1f, 1f);
+            StartCoroutine(DelayedLoadScene());
+
         }
         else
         {
             playerRigidbody.gravityScale = 2f;
             playerTransform.localScale = new Vector3(1f, 1f, 1f);
+            StartCoroutine(DelayedLoadScene());
+
         }
+    }
+
+    private IEnumerator DelayedLoadScene()
+    {
+        yield return new WaitForSeconds(0.2f);
     }
 }
