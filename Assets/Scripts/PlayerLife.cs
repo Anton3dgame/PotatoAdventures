@@ -9,7 +9,7 @@ public class PlayerLife : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D rb;
-    private int lifes = 3;
+    private int lifes = 4;
     private bool damage = false;
     private bool hitByBullet = false;
 
@@ -152,9 +152,4 @@ public class PlayerLife : MonoBehaviour
 
         StartCoroutine(DelayedLoadScene());
     }
-
-  /*  private void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    } */
 }
