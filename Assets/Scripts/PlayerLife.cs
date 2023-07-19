@@ -19,6 +19,7 @@ public class PlayerLife : MonoBehaviour
     public Image heart_1;
     public Image heart_2;
     public Image heart_3;
+    public Image heart_4;
 
     bool tot = false;
 
@@ -31,6 +32,11 @@ public class PlayerLife : MonoBehaviour
 
     private void Update()
     {
+        if (lifes == 3)
+        {
+            heart_4.enabled = false;
+        }
+
         if (lifes == 2)
         {
             heart_3.enabled = false;
@@ -66,13 +72,7 @@ public class PlayerLife : MonoBehaviour
             }
             
             currentTimer += Time.deltaTime;
-            //Debug.Log(currentTimer);
         }
-
-      /*  if (!damage)
-        {
-            currentTimer = 0.6f;
-        }*/
 
         if (hitByBullet)
         {
@@ -103,7 +103,7 @@ public class PlayerLife : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Heal") && lifes < 3)
+        if (collision.gameObject.CompareTag("Heal") && lifes < 4)
         {
             Destroy(collision.gameObject);
             Heal();
@@ -125,7 +125,11 @@ public class PlayerLife : MonoBehaviour
     private void Heal()
     {
         lifes++;
-        if (lifes == 3)
+        if (lifes == 4)
+        {
+            heart_4.enabled = true;
+        }
+        else if (lifes == 3)
         {
             heart_3.enabled = true;
         }
