@@ -15,6 +15,7 @@ public class PlayerInteraction : MonoBehaviour
     private GameObject interactingObject2;
     private GameObject interactingObject3;
     public GameObject objectToCreate;    // was gespawnt wird
+    public GameObject objectToCreate2;
 
     public bool codePanelactive = false;
 
@@ -97,6 +98,12 @@ public class PlayerInteraction : MonoBehaviour
         {
             isOnGrassObject = true;
             interactingObject3 = collision.gameObject;
+        }
+
+        if (collision.gameObject.CompareTag("Tür")) 
+        {
+            GameObject newObject = Instantiate(objectToCreate2, new Vector2(50, 14), Quaternion.identity);
+            Destroy(collision.gameObject);
         }
     }
 

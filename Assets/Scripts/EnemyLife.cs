@@ -70,7 +70,8 @@ public class EnemyLife : MonoBehaviour
         {
             heart_1.enabled = false;
             Destroy(gameObject);
-            StartCoroutine(DelayedLoadScene2());
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+           // StartCoroutine(DelayedLoadScene2());
         }
     }
 
