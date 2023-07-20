@@ -61,11 +61,7 @@ public class PlayerInteraction : MonoBehaviour
             interactingObject2 = collision.gameObject;
         }
 
-        if (collision.gameObject.CompareTag("GrowableBlock"))
-        {
-            isOnGrassObject = true;
-            interactingObject3 = collision.gameObject;
-        }
+     
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -82,11 +78,7 @@ public class PlayerInteraction : MonoBehaviour
             interactingObject2 = null;
         }
 
-        if (collision.gameObject.CompareTag("GrowableBlock"))
-        {
-            isOnGrassObject = false;
-            interactingObject3 = null;
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -99,6 +91,12 @@ public class PlayerInteraction : MonoBehaviour
         if (collision.gameObject.CompareTag("Story"))
         {
             _story = true;
+        }
+
+        if (collision.gameObject.CompareTag("GrowableBlock"))
+        {
+            isOnGrassObject = true;
+            interactingObject3 = collision.gameObject;
         }
     }
 
@@ -119,6 +117,12 @@ public class PlayerInteraction : MonoBehaviour
             {
                 gravity = false;
             }
+        }
+
+        if (collision.gameObject.CompareTag("GrowableBlock"))
+        {
+            isOnGrassObject = false;
+            interactingObject3 = null;
         }
     }
 
