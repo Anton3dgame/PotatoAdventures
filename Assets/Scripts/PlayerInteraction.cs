@@ -20,6 +20,8 @@ public class PlayerInteraction : MonoBehaviour
 
     public bool gravity = false;
 
+    public bool _story = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -92,7 +94,12 @@ public class PlayerInteraction : MonoBehaviour
         if (collision.gameObject.CompareTag("Code"))
         {
             codePanelactive = true;
-        }  
+        }
+
+        if (collision.gameObject.CompareTag("Story"))
+        {
+            _story = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

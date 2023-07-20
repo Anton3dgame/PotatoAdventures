@@ -19,6 +19,7 @@ TagManager:
   - Bullet
   - Life
   - Platform
+  - Story
   layers:
   - Default
   - TransparentFX
