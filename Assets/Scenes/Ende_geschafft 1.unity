@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 224557816}
   - component: {fileID: 224557815}
   - component: {fileID: 224557814}
+  - component: {fileID: 224557817}
   m_Layer: 5
   m_Name: ' Button 2'
   m_TagString: Untagged
@@ -309,7 +310,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 224557815}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 224557817}
+        m_TargetAssemblyTypeName: CloseGame, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &224557815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,6 +361,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224557812}
   m_CullTransparentMesh: 1
+--- !u!114 &224557817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224557812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c81755e80f523d41905f69894477e19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &266741845
 GameObject:
   m_ObjectHideFlags: 0
