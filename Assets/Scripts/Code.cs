@@ -39,7 +39,7 @@ public class Code : MonoBehaviour
 
         codeText.text = codeTextValue;
 
-        if (codeTextValue == "1234")
+        if (codeTextValue == "1415")
         {
             rightCode = true;
             image.color = new Color(0.13f, 0.85f, 0f, 0.39f);
