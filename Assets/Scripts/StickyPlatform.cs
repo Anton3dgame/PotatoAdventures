@@ -4,21 +4,39 @@ using UnityEngine;
 
 public class StickyPlatform : MonoBehaviour
 {
-    public GameObject player;
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public float speed;
+    public int startingPoint;
+    public Transform[] points;
+    private int i;
+
+    private void Start()
     {
-        if (collision.gameObject.CompareTag("Platform"))
+        transform.position = points[startingPoint].position;
+    }
+
+    void Update()
+    {
+        if (Vector2.Distance(transform.position, points[i].position) < 0.02f)
         {
-            player.transform.SetParent(transform);
+            i++;
+            if(i == points.Length)
+            {
+                i = 0;
+            }
         }
+        
+        transform.position = Vector2.MoveTowards(transform.position, points[i].position,speed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter2D (Collider2D collision)
+    {
+            collision.transform.SetParent(transform);        
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Platform"))
-        {
-            player.gameObject.transform.SetParent(null);
-        }
+            collision.gameObject.transform.SetParent(null);
     }
 
 }
