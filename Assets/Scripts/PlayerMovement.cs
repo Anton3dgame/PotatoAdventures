@@ -38,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        Debug.Log(doubleJump);
         if (Input.GetButtonDown("Jump") && gameObject.GetComponent<ItemCollector>().shoe)
         {
             if (IsGrounded() || IsSpecial() || doubleJump)
