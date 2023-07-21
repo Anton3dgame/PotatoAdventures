@@ -11,21 +11,19 @@ public class CheatCode : MonoBehaviour
     public GameObject shovel;
     public GameObject shoes;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    private bool einmal = true;
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha6))
+        if (Input.GetKeyDown(KeyCode.X) && einmal)
         {
             water.transform.position = new Vector2(58.5f, 12f);
             torch.transform.position = new Vector2(58.5f, 12f);
             shovel.transform.position = new Vector2(58.5f, 12f);
             shoes.transform.position = new Vector2(58.5f, 12f);
             player.transform.position = new Vector2(58.5f, 12f);
+            einmal = false;
         }
+
     }
 }
